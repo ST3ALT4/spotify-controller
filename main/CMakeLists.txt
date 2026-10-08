@@ -1,0 +1,35 @@
+idf_component_register(
+    SRCS
+        "main.cpp"
+        "app/app_controller.cpp"
+        "buzzer/buzzer.cpp"
+        "display/oled.cpp"
+        "input/buttons.cpp"
+        "sensors/light_sensor.cpp"
+        "spotify/spotify_auth.cpp"
+        "spotify/spotify_client.cpp"
+        "wifi/wifi_manager.cpp"
+    INCLUDE_DIRS
+        "."
+        "config"
+        "app"
+        "buzzer"
+        "display"
+        "input"
+        "sensors"
+        "spotify"
+        "wifi"
+    REQUIRES
+        nvs_flash
+        esp_wifi
+        esp_netif
+        esp_event
+        esp_http_client
+        esp_driver_i2c
+        esp_driver_ledc
+        esp_driver_gpio
+        esp_adc
+        esp_timer
+        espressif__cjson
+        mbedtls
+)
