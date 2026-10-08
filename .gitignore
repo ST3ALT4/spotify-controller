@@ -1,0 +1,9 @@
+build/
+sdkconfig
+sdkconfig.old
+.env
+.env.*
+secrets.*
+credentials.*
+*.pem
+*.key
