@@ -5,7 +5,6 @@ idf_component_register(
         "buzzer/buzzer.cpp"
         "display/oled.cpp"
         "input/buttons.cpp"
-        "sensors/light_sensor.cpp"
         "spotify/spotify_auth.cpp"
         "spotify/spotify_client.cpp"
         "wifi/wifi_manager.cpp"
@@ -16,7 +15,6 @@ idf_component_register(
         "buzzer"
         "display"
         "input"
-        "sensors"
         "spotify"
         "wifi"
     REQUIRES
@@ -28,7 +26,6 @@ idf_component_register(
         esp_driver_i2c
         esp_driver_ledc
         esp_driver_gpio
-        esp_adc
         esp_timer
         espressif__cjson
         mbedtls

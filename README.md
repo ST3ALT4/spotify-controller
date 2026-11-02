@@ -8,7 +8,6 @@ A physical Spotify playback controller built on the ESP32 using ESP-IDF. Control
 - **Volume control** — Volume up/down buttons
 - **OLED display** — Shows current track title, artist, and volume on a 128×64 SSD1306 display
 - **Buzzer feedback** — Short beep on button press
-- **Light sensor** — Ambient light reading (ADC) for potential display brightness adjustment
 - **Spotify OAuth** — Authenticates via a refresh token using the Spotify Web API
 - **Wi-Fi** — Connects to your local network and polls Spotify every 2.5 seconds
 
@@ -20,7 +19,6 @@ A physical Spotify playback controller built on the ESP32 using ESP-IDF. Control
 | Display | 128×64 OLED (SSD1306, I2C) |
 | Buttons | 5× tactile push buttons (active-low, internal pull-up) |
 | Buzzer | Passive buzzer |
-| Light sensor | Photoresistor on ADC1 CH6 (GPIO 34) |
 
 ### Pin Map
 
@@ -34,7 +32,6 @@ A physical Spotify playback controller built on the ESP32 using ESP-IDF. Control
 | OLED SDA | 21 |
 | OLED SCL | 22 |
 | Buzzer | 27 |
-| Light Sensor | 34 (ADC1 CH6) |
 
 ## Project Structure
 
@@ -45,7 +42,6 @@ main/
 ├── config/         # Pin definitions and compile-time config (credentials, intervals)
 ├── display/        # SSD1306 OLED driver (I2C, framebuffer)
 ├── input/          # ButtonManager — GPIO ISR → FreeRTOS queue → callback
-├── sensors/        # LightSensor — ADC oneshot driver
 ├── spotify/        # SpotifyAuth (token refresh) + SpotifyClient (Web API)
 ├── wifi/           # WifiManager — connects and reports state changes
 └── main.cpp        # Entry point — wires all subsystems together
